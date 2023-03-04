@@ -2,17 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Blog from "../components/Blog.astro";
 import BlogTitle from "../components/BlogTitle.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf()
-);
-
-console.log(posts[0].frontmatter);
-
-const { title, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <Layout title="Welcome to My Blog">
@@ -23,40 +12,8 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props;
           <BlogTitle />
 
           <Blog />
-
-          {
-            posts &&
-              posts.map(() => (
-                <article>
-                  {heroImage && (
-                    <img width={720} height={360} src={heroImage} alt="" />
-                  )}
-                  <h1 class="title">{title}</h1>
-                  <FormattedDate date={pubDate} />
-                  {updatedDate && (
-                    <div class="last-updated-on">
-                      Last updated on <FormattedDate date={updatedDate} />
-                    </div>
-                  )}
-                </article>
-              ))
-          }
         </div>
       </div>
     </section>
   </main>
 </Layout>
-
-<style>
-  .title {
-    font-size: 2em;
-    margin: 0.25em 0 0;
-  }
-  hr {
-    border-top: 1px solid #ddd;
-    margin: 1rem 0;
-  }
-  .last-updated-on {
-    font-style: italic;
-  }
-</style>
