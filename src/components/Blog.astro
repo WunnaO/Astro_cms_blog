@@ -12,7 +12,7 @@ const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
 ---
 
 <div
-  class="blog_cardContainer flex flex-col lg:flex-row gap-12 lg:gap-4 py-16 border-solid border-b-2 border-[#767A81]"
+  class="flex flex-col flex-wrap lg:flex-row gap-12 lg:gap-[17px] py-16 border-solid border-b-2 border-[#767A81]"
 >
   <BlogTemplate
     src={blog_1}
