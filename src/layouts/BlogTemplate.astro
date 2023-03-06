@@ -1,5 +1,5 @@
 ---
-const { src, title, content } = Astro.props;
+const { post } = Astro.props;
 ---
 
 <div class="blog_card basis-[32%] flex flex-col gap-5">
@@ -8,7 +8,7 @@ const { src, title, content } = Astro.props;
       alt=""
       width="1600"
       height="901"
-      src={src}
+      src={post.frontmatter.heroImage}
       class="w-full object-cover"
       style="color: transparent"
     />
@@ -16,10 +16,10 @@ const { src, title, content } = Astro.props;
   <p
     class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
   >
-    {title}
+    {post.frontmatter.title}
   </p>
   <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-    {content}
+    {post.frontmatter.description}
   </p>
   <div class="btn">
     <a href="http://localhost:3000/article/dzkblog-1"

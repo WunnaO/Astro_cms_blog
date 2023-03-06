@@ -1,19 +1,81 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Blog from "../components/Blog.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BlogTitle from "../components/BlogTitle.astro";
+import BaseHead from "../components/BaseHead.astro";
+import BlogTemplate from "../layouts/BlogTemplate.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.publishDate).valueOf() -
+    new Date(a.frontmatter.publishDate).valueOf()
+);
 ---
 
-<Layout title="Welcome to My Blog">
-  <main>
-    <section id="blog" class="py-28">
-      <div class="container mx-auto px-[48px] md:px-[60px] lg:px-20">
-        <div class="blog">
-          <BlogTitle />
-
-          <Blog />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
+    <script src="../JS/script.js"></script>
+  </head>
+  <body class="bg-[#02020B] overflow-x-hidden container">
+    <Header />
+    <main>
+      <section id="blog" class="py-28">
+        <div class="container mx-auto px-[48px] md:px-[60px] lg:px-20">
+          <div class="blog">
+            <BlogTitle />
+            <div
+              class="flex flex-col flex-wrap lg:flex-row gap-12 lg:gap-[17px] py-16 border-solid border-b-2 border-[#767A81]"
+            >
+              <!-- <BlogTemplate
+              heroImage={blog_1}
+              title={"ဒီလို အကြပ်အတည်းကာလမှာ လုပ်ငန်းတွေသုံးသင့်တဲ့ Marketing Strategy ၃ ခု အပိုင်း(၁)"}
+              content={"မီတာစျေးတွေတက်လာတယ်၊ အင်တာနက် Package တွေစျေးကြီးလာတယ် ဆီစျေးတွေတက်လာတယ် စတဲ့ အတက်တွေကြားမှာ လုပ်ငန်းတွေအနေနဲ့ ကိုယ့်နဲ့အတူလုပ်ကိုင်နေတဲ့ ဝန်ထမ်း၊ မိသားစုအတွက် ရသမျှနည်းလမ်းအကုန်နဲ့ထောင့်ခံ ရုန်းကန်နေရဦးမှာပါ"}
+            />
+            <BlogTemplate
+              heroImage={blog_2}
+              title={"၂ မိနစ်တည်းနဲ့ သင့်လုပ်ငန်းအကြောင်း အသေးစိတ်ပြောပြနိုင်မယ်ဆိုရင်"}
+              content={"၂ မိနစ်တည်းနဲ့ သင့်လုပ်ငန်းအကြောင်း အသေးစိတ်ပြောပြနိုင်မယ်ဆိုရင် အချက်အလက်ကို လိုချင်တဲ့နေရာ လိုချင်တဲ့အချိန်မှာ ရယူချင်လာတဲ့ Digital ခေတ်မှာ လုပ်ငန်းတွေရဲ့ အဓိက စိန်ခေါ်မှုဟာ လိုချင်တဲ့ အချက်အလက်ကို အမြန်ဆုံးပေးနိုင်ခြင်းပဲဖြစ်ပါတယ်။"}
+            />
+            <BlogTemplate
+              heroImage={blog_3}
+              title={"မြိတ်က အွန်လိုင်းသုံးစွဲသူတွေရဲ့ အကြိုက်က ဘာဖြစ်မလဲ?"}
+              content={" မြိတ်မြို့မှာလုပ်ကိုင်ကြတဲ့ စီးပွားရေး လုပ်ငန်းတွေဟာ Online Marketing ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့  ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊ အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။"}
+            /> -->
+              {posts && posts.map((post) => <BlogTemplate post={post} />)}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
-</Layout>
+      </section>
+    </main>
+    <Footer />
+
+    <script>
+      declare global {
+        interface Window {
+          netlifyIdentity: any;
+        }
+      }
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user: any) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
