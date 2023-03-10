@@ -2,9 +2,9 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BlogTitle from "../components/BlogTitle.astro";
 import BaseHead from "../components/BaseHead.astro";
-import BlogTemplate from "../layouts/BlogTemplate.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BlogTemplate from "../components/BlogTemplate.astro";
 
 const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
   (a, b) =>
@@ -30,12 +30,12 @@ const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
   <body class="bg-[#02020B] overflow-x-hidden container-fluid">
     <Header />
     <main>
-      <section id="blog" class="py-28">
+      <section class="py-28">
         <div class="container-fluid mx-auto px-[48px] md:px-[60px] lg:px-20">
-          <div class="blog">
+          <div>
             <BlogTitle />
             <div
-              class="blog_cardContainer gap-y-8 flex flex-col flex-wrap gy-8 lg:flex-row py-16 border-solid border-b-2 border-[#767A81] lg:gap-y-10"
+              class="gap-y-8 flex flex-col flex-wrap gy-8 lg:flex-row py-16 border-solid border-b-2 border-[#767A81] lg:gap-y-10"
             >
               {posts && posts.map((post) => <BlogTemplate post={post} />)}
             </div>
