@@ -2,7 +2,7 @@
 const { post } = Astro.props;
 ---
 
-<div class="blog_card basis-[32%] flex flex-col gap-5">
+<div class="blog_card basis-[33.33%] flex flex-col gap-5 px-2 cursor-pointer">
   <div class="card_img w-full">
     <img
       alt=""
@@ -22,12 +22,10 @@ const { post } = Astro.props;
     {post.frontmatter.description}
   </p>
   <div class="btn">
-    <a href="http://localhost:3000/article/dzkblog-1"
-      ><button
-        class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
-      >
-        Read more
-      </button></a
+    <button
+      class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
     >
+      Read more
+    </button>
   </div>
 </div>
