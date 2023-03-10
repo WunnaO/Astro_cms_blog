@@ -1,5 +1,5 @@
 ---
-layout: ../../src/layouts/BlogLayout.astro
+layout: "../../layout/BlogLayout.astro"
 heroImage: /assets/Blog_2.webp
 pubDate: 2023-03-10T15:30:29.121Z
 title: DzkBlog_2

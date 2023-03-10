@@ -1,5 +1,5 @@
 ---
-layout: ../../src/layouts/BlogLayout.astro
+layout: "../../layouts/BlogLayout.astro"
 heroImage: /assets/Blog_2.webp
 pubDate: 2023-03-10T15:33:07.912Z
 title: DzkBlog_3
@@ -8,6 +8,7 @@ paragraph: မြိတ်မြို့မှာလုပ်ကိုင်က
   ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့ ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊
   အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။
 ---
+
 <!--StartFragment-->
 
 မြိတ်အလိုက် မြိတ်အကြိုက်
