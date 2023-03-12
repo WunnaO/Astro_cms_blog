@@ -25,6 +25,6 @@ collections:
       - {
           label: "Layout",
           name: "layout",
-          widget: "choose",
+          widget: "hidden",
           default: "../../layout/BlogLayout.astro",
         }
