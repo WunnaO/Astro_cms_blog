@@ -29,7 +29,9 @@ const { description, paragraph, heroImage } = Astro.props;
       heroImage={heroImage}
       description={description}
       paragraph={paragraph}
-    />
+    >
+      <slot />
+    </BlogPost>
 
     <Footer />
   </body>
