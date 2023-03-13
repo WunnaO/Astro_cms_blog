@@ -1,11 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
 import BaseHead from "../components/BaseHead.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-const { description, paragraph, heroImage } = Astro.props;
+const { content } = Astro.props;
+const { description, paragraph, heroImage } = content;
 ---
 
 <!DOCTYPE html>
@@ -26,11 +26,7 @@ const { description, paragraph, heroImage } = Astro.props;
   <body class="bg-[#02020B] overflow-x-hidden container-fluid">
     <Header />
 
-    <BlogPost
-      heroImage={heroImage}
-      description={description}
-      paragraph={paragraph}
-    >
+    <BlogPost {heroImage} {description} {paragraph}>
       <slot />
     </BlogPost>
 
