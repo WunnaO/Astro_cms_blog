@@ -22,13 +22,13 @@ const { description, paragraph, heroImage } = Astro.props;
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="bg-[#02020B] overflow-x-hidden container-fluid">
     <Header />
 
     <BlogPost
+      heroImage={heroImage}
       description={description}
       paragraph={paragraph}
-      heroImage={heroImage}
     />
 
     <Footer />
