@@ -5,8 +5,6 @@ import Footer from "../components/Footer.astro";
 import BaseHead from "../components/BaseHead.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-import "../css/style.css";
-
 const { description, paragraph, heroImage } = Astro.props;
 ---
 
@@ -23,6 +21,7 @@ const { description, paragraph, heroImage } = Astro.props;
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="bg-[#02020B] overflow-x-hidden container-fluid">
     <Header />
