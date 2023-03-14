@@ -7,7 +7,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import BlogTemplate from "../components/BlogTemplate.astro";
 
-const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
     new Date(a.frontmatter.publishDate).valueOf()
