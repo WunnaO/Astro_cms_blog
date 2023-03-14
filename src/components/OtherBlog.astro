@@ -1,5 +1,7 @@
 ---
-const posts = await Astro.glob("../pages/blog/*.{md,mdx}");
+// import BlogTemplate from "./BlogTemplate.astro";
+
+const blogs = await Astro.glob("../pages/blog/*.{md,mdx}");
 ---
 
 <section>
@@ -15,46 +17,7 @@ const posts = await Astro.glob("../pages/blog/*.{md,mdx}");
         </h1>
       </div>
       <div class="blog_cardContainer flex-wrap flex flex-col lg:flex-row pt-16">
-        <div
-          class="blog_card basis-[33.33%] flex flex-col gap-5 px-2 hover:scale-95 cursor-pointer transition-transform ease-in-out duration-1000"
-        >
-          <div class="card_img w-full">
-            <a href="/blog/dzkblog-4"
-              ><img
-                alt=""
-                src=""
-                width="1600"
-                height="901"
-                class="w-full object-cover"
-                style="color: transparent"
-              /></a
-            >
-          </div>
-          <a href="/blog/dzkblog-4"
-            ><p
-              class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
-            >
-              မြိတ်က အွန်လိုင်းသုံးစွဲသူတွေရဲ့ အကြိုက်က ဘာဖြစ်မလဲ? (1)
-            </p></a
-          ><a href="/blog/dzkblog-4"
-            ><p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-              မြိတ်မြို့မှာလုပ်ကိုင်ကြတဲ့ စီးပွားရေး လုပ်ငန်းတွေဟာ Online
-              Marketing ရဲ့ အဓိက အရေးကြီးဆုံး အပိုင်းဖြစ်တဲ့
-              ကြော်ငြာစာအရေးအသားမှာ အားနည်းတာ၊ အချိန်မပေးနိုင်တာကို တွေ့ရပါတယ်။
-            </p></a
-          >
-          <div class="btn">
-            <a href="/blog/dzkblog-4"
-              ><button
-                class="relative btn-outline-hover text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
-              >
-                Read more<span
-                  class="absolute w-full h-full left-0 bg-fuchsia-600 z-[-1] overlay"
-                ></span></button
-              ></a
-            >
-          </div>
-        </div>
+        <!-- <BlogTemplate /> -->
       </div>
     </div>
   </div>
