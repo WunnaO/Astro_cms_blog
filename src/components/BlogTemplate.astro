@@ -1,14 +1,14 @@
 ---
-const { post } = Astro.props;
+const { title, img, description, paragraph, url } = Astro.props;
 ---
 
 <div class="basis-[33.33%] flex flex-col gap-5 px-2 cursor-pointer">
   <div class="card_img w-full">
     <img
-      alt={post.frontmatter.title}
+      alt={title}
       width="1600"
       height="901"
-      src={post.frontmatter.heroImage}
+      src={img}
       class="w-full object-cover"
       style="color: transparent"
     />
@@ -16,13 +16,13 @@ const { post } = Astro.props;
   <p
     class="text-white mm-txt text-[14px] w-[100%] lg:w-[85%] leading-[21.81px] font-bold"
   >
-    {post.frontmatter.description}
+    {description}
   </p>
   <p class="text-[#767A81] mm-txt text-[12px] leading-[18.69px]">
-    {post.frontmatter.paragraph}
+    {paragraph}
   </p>
   <div class="btn">
-    <a href={post.url}>
+    <a href={url}>
       <button
         class="text-[14px] lg:text-[12px] font-bold uppercase tracking-wide text-white py-2 px-3 border-solid border-[1px] border-[#FAC211] rounded-lg eng-txt"
       >

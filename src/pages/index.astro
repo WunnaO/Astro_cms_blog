@@ -41,7 +41,13 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
               {
                 posts &&
                   posts.map((p) => (
-                    <BlogTemplate post={p} title={p.frontmatter.title} />
+                    <BlogTemplate
+                      title={p.frontmatter.title}
+                      img={p.frontmatter.heroImage}
+                      description={p.frontmatter.description}
+                      paragraph={p.frontmatter.paragraph}
+                      url={p.url}
+                    />
                   ))
               }
             </div>
