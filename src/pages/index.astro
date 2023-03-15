@@ -3,8 +3,6 @@ import BlogLayout from "../layouts/BlogLayout.astro";
 import BlogTitle from "../components/BlogTitle.astro";
 import BlogTemplate from "../components/BlogTemplate.astro";
 
-import "../css/style.css";
-
 const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
