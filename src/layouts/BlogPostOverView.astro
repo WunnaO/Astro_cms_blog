@@ -7,7 +7,6 @@ import BlogPost from "../components/BlogPost.astro";
 
 import OtherBlog from "../components/OtherBlog.astro";
 import "../style/style.css";
-import "../javascript/script.js";
 
 const { content } = Astro.props;
 const { description, paragraph, heroImage, id } = content;
@@ -37,5 +36,6 @@ const { description, paragraph, heroImage, id } = content;
     <OtherBlog id={id} />
 
     <Footer />
+    <script src="../javascript/script.js"></script>
   </body>
 </html>

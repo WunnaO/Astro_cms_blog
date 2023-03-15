@@ -3,7 +3,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../javascript/script.js";
 import "../style/style.css";
 ---
 
@@ -24,6 +23,7 @@ import "../style/style.css";
     <Header />
     <slot />
     <Footer />
+    <script src="../javascript/script.js"></script>
     <script>
       declare global {
         interface Window {
