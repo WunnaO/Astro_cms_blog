@@ -3,14 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: "YAMIN A 001";
   src: url("../font/YAMIN A 001.ttf") format("ttf");
 }
 @font-face {
   font-family: "W49Art";
   src: url("../font/W49Art.ttf") format("ttf");
-}
+} */
 
 .eng-txt {
   font-family: "Manrope", "Times New Roman", Times, serif;
