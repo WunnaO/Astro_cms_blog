@@ -1,5 +1,6 @@
 ---
 import BlogTemplate from "./BlogTemplate.astro";
+
 const { id } = Astro.props;
 const blogs = await Astro.glob("../pages/blog/*.{md,mdx}");
 const openBlog = blogs.filter((blog) => blog.frontmatter.id !== id);
