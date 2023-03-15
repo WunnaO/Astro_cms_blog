@@ -1,10 +1,11 @@
 ---
-// import BlogTemplate from "./BlogTemplate.astro";
-
+import BlogTemplate from "./BlogTemplate.astro";
+const { id } = Astro.props;
 const blogs = await Astro.glob("../pages/blog/*.{md,mdx}");
+const openBlog = blogs.filter((blog) => blog.frontmatter.id !== id);
 ---
 
-<section>
+<section role="otherBlog">
   <div class="container-fluid px-[48px] lg:px-[72px]">
     <div class="blog">
       <div class="blog_title flex flex-col lg:flex-row lg:items-center">
@@ -17,7 +18,18 @@ const blogs = await Astro.glob("../pages/blog/*.{md,mdx}");
         </h1>
       </div>
       <div class="blog_cardContainer flex-wrap flex flex-col lg:flex-row pt-16">
-        <!-- <BlogTemplate /> -->
+        {
+          openBlog &&
+            openBlog.map((B) => (
+              <BlogTemplate
+                title={B.frontmatter.title}
+                img={B.frontmatter.heroImage}
+                description={B.frontmatter.description}
+                paragraph={B.frontmatter.paragraph}
+                url={B.url}
+              />
+            ))
+        }
       </div>
     </div>
   </div>
