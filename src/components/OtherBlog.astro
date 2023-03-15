@@ -6,7 +6,7 @@ const blogs = await Astro.glob("../pages/blog/*.{md,mdx}");
 const openBlog = blogs.filter((blog) => blog.frontmatter.id !== id);
 ---
 
-<section role="otherBlog">
+<section>
   <div class="container-fluid px-[48px] lg:px-[72px]">
     <div class="blog">
       <div class="blog_title flex flex-col lg:flex-row lg:items-center">

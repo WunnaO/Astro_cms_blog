@@ -5,6 +5,7 @@ import BaseHead from "../components/BaseHead.astro";
 
 import BlogPost from "../components/BlogPost.astro";
 import OtherBlog from "../components/OtherBlog.astro";
+import "../css/style.css";
 
 const { content } = Astro.props;
 const { description, paragraph, heroImage, id } = content;
@@ -34,9 +35,10 @@ const { description, paragraph, heroImage, id } = content;
     <OtherBlog id={id} />
 
     <Footer />
-  </body><style>
-    section {
-      margin: 125px 0;
-    }
-  </style>
+    <style>
+      section {
+        margin: 125px 0;
+      }
+    </style>
+  </body>
 </html>
