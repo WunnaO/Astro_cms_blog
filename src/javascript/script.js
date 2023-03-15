@@ -1,4 +1,6 @@
-document.querySelector("#btn-menu").onclick = (e) => {
+const B_menu = document.querySelector("#btn-menu");
+
+B_menu.onclick = (e) => {
   let list = document.querySelector("ul");
   if (e.target.parentElement.classList.contains("close")) {
     e.target.parentElement.classList.remove("close");
